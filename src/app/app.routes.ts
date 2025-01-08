@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { AdminComponent } from './components/admin/admin.component';
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
 import { NgClassComponent } from './components/ng-class/ng-class.component';
+import { NgStyleComponent } from './components/ng-style/ng-style.component';
 
 export const routes: Routes = [
   {
@@ -20,5 +21,9 @@ export const routes: Routes = [
   {
     path: 'ng-class',
     component: NgClassComponent,
+  },
+  {
+    path: 'ng-style',
+    component: NgStyleComponent,
   },
 ];
