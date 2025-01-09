@@ -5,7 +5,6 @@ import { NgClassComponent } from './components/ng-class/ng-class.component';
 import { NgStyleComponent } from './components/ng-style/ng-style.component';
 import { ControlStatementComponent } from './components/control-statement/control-statement.component';
 import { SignalComponent } from './components/signal/signal.component';
-import { TaskListComponent } from './components/task-list/task-list.component';
 
 export const routes: Routes = [
   {
@@ -36,9 +35,5 @@ export const routes: Routes = [
   {
     path: 'signal',
     component: SignalComponent,
-  },
-  {
-    path: 'task-list',
-    component: TaskListComponent,
   },
 ];
