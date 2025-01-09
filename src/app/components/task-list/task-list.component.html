@@ -1,0 +1,40 @@
+<div class="container">
+  <h1 class="title">Task Manager</h1>
+
+  <form (ngSubmit)="addTask()" class="task-form">
+    <input
+      type="text"
+      name="title"
+      placeholder="Enter task title"
+      [(ngModel)]="newTask.title"
+      class="input-field"
+      required
+    />
+    <select [(ngModel)]="newTask.priority" name="priority" class="select-field">
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select>
+    <button type="submit" class="add-button">Add Task</button>
+  </form>
+
+  <div class="task-list">
+    @if (tasks.length > 0) {
+    <ul>
+      @for (task of tasks; track $index) {
+      <li class="task-item">
+        <span class="task-title">{{ task.title }}</span>
+        <span class="priority-badge priority-{{ task.priority.toLowerCase() }}">
+          {{ task.priority }}
+        </span>
+        <button (click)="deleteTask(task.id)" class="delete-button">
+          Delete
+        </button>
+      </li>
+      }
+    </ul>
+    } @else {
+    <p class="no-tasks">No tasks available</p>
+    }
+  </div>
+</div>
