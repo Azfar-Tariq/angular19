@@ -3,6 +3,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
 import { NgClassComponent } from './components/ng-class/ng-class.component';
 import { NgStyleComponent } from './components/ng-style/ng-style.component';
+import { ControlStatementComponent } from './components/control-statement/control-statement.component';
 
 export const routes: Routes = [
   {
@@ -25,5 +26,9 @@ export const routes: Routes = [
   {
     path: 'ng-style',
     component: NgStyleComponent,
+  },
+  {
+    path: 'control-statement',
+    component: ControlStatementComponent,
   },
 ];
