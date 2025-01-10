@@ -6,6 +6,8 @@ import { NgStyleComponent } from './components/ng-style/ng-style.component';
 import { ControlStatementComponent } from './components/control-statement/control-statement.component';
 import { SignalComponent } from './components/signal/signal.component';
 import { LinkedSignalComponent } from './components/linked-signal/linked-signal.component';
+import { TemplateFormComponent } from './components/template-form/template-form.component';
+import { ReactiveFormsComponent } from './components/reactive-forms/reactive-forms.component';
 
 export const routes: Routes = [
   {
@@ -40,5 +42,13 @@ export const routes: Routes = [
   {
     path: 'linked-signal',
     component: LinkedSignalComponent,
+  },
+  {
+    path: 'template-form',
+    component: TemplateFormComponent,
+  },
+  {
+    path: 'reactive-form',
+    component: ReactiveFormsComponent,
   },
 ];

@@ -12,33 +12,98 @@
     <div class="collapse navbar-collapse" id="mynavbar">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active" [routerLink]="'admin'">Admin</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" [routerLink]="'data-binding'">Data Binding</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="'ng-class'">Ng Class</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="'ng-style'">Ng Style</a>
+        <li class="nav-item dropdown">
+          <a
+            href="#"
+            class="nav-link dropdown-toggle"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            >Directive</a
+          >
+          <ul class="drowdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a
+                class="dropdown-item"
+                [routerLink]="'ng-class'"
+                class="text-white"
+                >NgClass</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                [routerLink]="'ng-style'"
+                class="text-white"
+                >NgStyle</a
+              >
+            </li>
+          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="'control-statement'"
             >Control Statement</a
           >
         </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="'signal'">Signal</a>
+        <li class="nav-item dropdown">
+          <a
+            href="#"
+            class="nav-link dropdown-toggle"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            >Signal</a
+          >
+          <ul class="drowdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a
+                class="dropdown-item"
+                [routerLink]="'signal'"
+                class="text-white"
+                >Signal</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                [routerLink]="'linked-signal'"
+                class="text-white"
+                >Linked Signal</a
+              >
+            </li>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="'linked-signal'">Linked Signal</a>
+        <li class="nav-item dropdown">
+          <a
+            href="#"
+            class="nav-link dropdown-toggle"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            >Forms</a
+          >
+          <ul class="drowdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a
+                class="dropdown-item"
+                [routerLink]="'template-form'"
+                class="text-white"
+                >Template Form</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                [routerLink]="'reactive-form'"
+                class="text-white"
+                >Reactive Form</a
+              >
+            </li>
+          </ul>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="text" placeholder="Search" />
-        <button class="btn btn-primary" type="button">Search</button>
-      </form>
     </div>
   </div>
 </nav>
