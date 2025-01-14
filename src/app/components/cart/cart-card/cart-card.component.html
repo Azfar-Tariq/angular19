@@ -1,0 +1,22 @@
+<!-- cart-card.component.html -->
+<div class="card mb-3 border-0 shadow-sm">
+  <div class="card-body p-3">
+    <div class="d-flex align-items-center">
+      <div class="flex-grow-1">
+        <h6 class="card-title mb-1 text-truncate">{{ item.product.title }}</h6>
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <p class="card-text mb-0 text-primary">${{ item.product.price }}</p>
+            <small class="text-muted">Qty: {{ item.quantity }}</small>
+          </div>
+          <button
+            class="btn btn-sm btn-outline-danger"
+            (click)="onRemoveItem()"
+          >
+            Remove
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

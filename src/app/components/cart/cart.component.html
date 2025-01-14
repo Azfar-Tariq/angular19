@@ -1,0 +1,21 @@
+<div class="card shadow-sm">
+  <div class="card-header bg-primary text-white">
+    <h4 class="mb-0">Shopping Cart</h4>
+  </div>
+  <div class="card-body">
+    @if (cartItems.length > 0) { @for (item of cartItems; track $index) {
+    <app-cart-card
+      [item]="item"
+      (removeItem)="removeItem($event)"
+    ></app-cart-card>
+    }
+    <hr class="my-3" />
+    <div class="d-flex justify-content-between align-items-center">
+      <h4 class="mb-0">Total:</h4>
+      <h4 class="mb-0 text-primary">${{ cartTotal }}</h4>
+    </div>
+    } @else {
+    <p class="text-muted text-center mb-0">Your cart is empty</p>
+    }
+  </div>
+</div>
