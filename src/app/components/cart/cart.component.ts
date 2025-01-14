@@ -22,4 +22,12 @@ export class CartComponent {
   removeItem(productId: number) {
     this.cartService.removeFromCart(productId);
   }
+
+  decreaseQuantity(productId: number) {
+    this.cartService.decreaseQuantity(productId);
+  }
+
+  clearCart() {
+    this.cartService.clearCart();
+  }
 }

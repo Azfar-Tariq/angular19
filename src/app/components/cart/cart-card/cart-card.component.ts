@@ -10,8 +10,13 @@ import { CartItem } from '../service/cart.service';
 export class CartCardComponent {
   @Input() item!: CartItem;
   @Output() removeItem = new EventEmitter<number>();
+  @Output() decreaseQuantity = new EventEmitter<number>();
 
   onRemoveItem() {
     this.removeItem.emit(this.item.product.id);
+  }
+
+  onDecreaseQuantity() {
+    this.decreaseQuantity.emit(this.item.product.id);
   }
 }

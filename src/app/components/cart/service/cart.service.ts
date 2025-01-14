@@ -34,6 +34,21 @@ export class CartService {
     }
   }
 
+  decreaseQuantity(productId: number) {
+    const item = this.cartItems.find(
+      (cartItem) => cartItem.product.id === productId
+    );
+    if (item) {
+      if (item.quantity > 1) {
+        item.quantity--;
+      }
+    }
+  }
+
+  clearCart() {
+    this.cartItems = [];
+  }
+
   getTotal(): number {
     return this.cartItems.reduce((total, item) => {
       return total + item.product.price * item.quantity;
