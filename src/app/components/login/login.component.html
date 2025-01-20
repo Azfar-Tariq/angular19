@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="login-container">
+    <div class="login-form">
+      <h2>Login</h2>
+      <form>
+        <div class="mb-3">
+          <label class="form-label">Username</label>
+          <input
+            name="username"
+            type="text"
+            [(ngModel)]="loginObj.username"
+            class="form-control"
+            placeholder="Enter your username"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input
+            name="password"
+            type="password"
+            [(ngModel)]="loginObj.password"
+            class="form-control"
+            placeholder="Enter your password"
+          />
+        </div>
+        <button (click)="onLogin()" class="btn btn-primary btn-custom">
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

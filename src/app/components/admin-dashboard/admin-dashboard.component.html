@@ -1,0 +1,119 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item active">
+          <a class="nav-link">Admin Dashboard</a>
+        </li>
+      </ul>
+      <button class="btn btn-primary" (click)="onLogout()">Logout</button>
+    </div>
+  </div>
+</nav>
+<div class="container py-4">
+  <div class="card mb-4">
+    <div class="card-body">
+      <h3>Add/Edit Product</h3>
+      <form (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label class="form-label">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="currentProduct.title"
+            name="title"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Price</label>
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="currentProduct.price"
+            name="price"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Category</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="currentProduct.category"
+            name="category"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Description</label>
+          <textarea
+            class="form-control"
+            [(ngModel)]="currentProduct.description"
+            name="description"
+          ></textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Image URL</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="currentProduct.image"
+            name="image"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">
+          {{ editMode ? "Update" : "Add" }} Product
+        </button>
+        @if (editMode) {
+        <button
+          type="button"
+          class="btn btn-secondary ms-2"
+          (click)="cancelEdit()"
+        >
+          Cancel
+        </button>
+        }
+      </form>
+    </div>
+  </div>
+
+  <!-- Products List -->
+  <div class="card">
+    <div class="card-body">
+      <h3>Products List</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Price</th>
+              <th>Category</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (product of products; track product.id) {
+            <tr>
+              <td>{{ product.title }}</td>
+              <td>${{ product.price }}</td>
+              <td>{{ product.category }}</td>
+              <td>
+                <button
+                  class="btn btn-sm btn-primary me-2"
+                  (click)="editProduct(product)"
+                >
+                  Edit
+                </button>
+                <button
+                  class="btn btn-sm btn-danger"
+                  (click)="deleteProduct(product.id)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
